@@ -65,7 +65,7 @@ const UserSlugPage = () => {
       </Head>
       <main className="flex h-screen w-screen flex-col items-center justify-center gap-y-5">
         <h1 className="text-lg font-bold">Edit User Data</h1>
-        <section className="h-max w-full bg-black md:w-[50%]">
+        <section className="h-max w-full  md:w-[50%]">
           <div
             key={initialData.data.id}
             className="hover:border-lg h-[200px] w-full cursor-pointer rounded-lg bg-black p-2 text-white hover:border-[2px] hover:border-black hover:bg-white hover:text-black"
@@ -79,7 +79,7 @@ const UserSlugPage = () => {
             </div>
           </div>
         </section>
-        <section className="h-[40%] w-full  md:w-[50%] md:outline-dashed">
+        <section className="h-[40%] w-full  md:w-[50%] ">
           <UserForm
             handleSubmit={handleSubmit}
             onSubmit={onSubmit}
