@@ -24,6 +24,7 @@ declare global {
     register: UseFormRegister<IFormInputs>;
     labelName: string;
     fieldName: keyof IFormInputs;
+    inputType: "text" | "password" | "file" | "date" | "email" | "number";
   }
 }
 
@@ -32,6 +33,7 @@ const FormWrapper = (props: FormWrapperType) => {
     <label className="flex w-full flex-col">
       {props.labelName}
       <input
+        type={props.inputType}
         className="border border-black px-2"
         {...props.register(props.fieldName)}
       />
@@ -59,25 +61,39 @@ export const UserForm = ({
         labelName="First Name"
         register={register}
         fieldName="firstName"
+        inputType="text"
       />
       <FormWrapper
         labelName="Last Name"
         register={register}
         fieldName="lastName"
+        inputType="text"
       />
       <FormWrapper
         labelName="Country"
         register={register}
         fieldName="country"
+        inputType="text"
       />
       <FormWrapper
         labelName="Password"
         register={register}
         fieldName="password"
+        inputType="password"
       />
-      <FormWrapper labelName="Age" register={register} fieldName="age" />
+      <FormWrapper
+        inputType="number"
+        labelName="Age"
+        register={register}
+        fieldName="age"
+      />
       <div className="flex h-full w-full justify-center">
-        <input className="h-full w-[40%] bg-purple-300" type="submit" />
+        <button
+          className="h-full w-max rounded-lg bg-purple-300 p-3 hover:bg-purple-200"
+          type="submit"
+        >
+          Submit
+        </button>
       </div>{" "}
     </form>
   );
