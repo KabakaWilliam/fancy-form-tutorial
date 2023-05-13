@@ -69,7 +69,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* rendered users */}
-        {initialData.data?.length ? (
+        {initialData.data?.length && (
           <section className="flex h-full flex-col justify-center">
             <h2 className="text-center text-lg font-bold">User Data</h2>
             <div className="flex h-[400px] w-[300px] flex-col gap-y-3 overflow-hidden overflow-y-scroll text-black">
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
                 ))}
             </div>
           </section>
-        ) : null}
+        )}
       </main>
     </>
   );
