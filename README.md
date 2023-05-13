@@ -1,28 +1,30 @@
-# Create T3 App
+# User Management App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a simple Next.js application for creating and viewing users. The application is built with Typescript, and uses tRPC for server communication and React Hook Form for form handling.
 
-## What's next? How do I make an app with this?
+## Features
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- User creation: The app allows you to create new users by submitting a form. The form includes fields for the user's first name, last name, country, password, and age.
+- User display: The app displays a list of all users that have been created. This list updates in real-time as new users are added.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## How to Run
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+To run this application, you first need to install the necessary dependencies. You can do this by running `npm install` or `yarn install` in the root directory of the project.
 
-## Learn More
+After the dependencies have been installed, you can start the application by running `npm run dev` or `yarn dev`. This will start the application in development mode, and you can access it by navigating to `http://localhost:3000` in your browser.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Code Overview
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+The main logic of the application is contained in the `Home` component. This component fetches the current list of users using a tRPC hook, and provides a form for creating new users. When the form is submitted, the new user data is sent to the server using another tRPC hook, and the list of users is invalidated to ensure that it updates with the newly added user.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+The `FormWrapper` component is a reusable component for creating form fields. It takes the register function from React Hook Form, a label name, and a field name as props, and renders a labeled input field.
 
-## How do I deploy this?
+The application uses Tailwind CSS for styling, and applies various utility classes to style the form and user list.
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Future Improvements
+
+Possible future improvements for this application could include:
+
+- Form validation: The form currently does not have any validation. Implementing validation would improve the user experience and ensure that the data sent to the server is in the correct format.
+- Error handling: The application does not currently handle errors that might occur when communicating with the server. Implementing error handling would make the application more robust.
+- Authentication: The application currently does not have any form of authentication. Adding authentication would make the application more secure, and would allow for user-specific features.
