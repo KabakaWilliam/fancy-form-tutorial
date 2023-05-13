@@ -57,11 +57,17 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex h-screen w-screen flex-col items-center justify-center gap-x-5 md:flex-row">
         {/* <UserForm {... handleSubmit, onSubmit, register}/> */}
-        <UserForm
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          register={register}
-        />
+        <section>
+          <h2 className="text-center text-lg font-bold  text-purple-600 md:mb-5">
+            Create User
+          </h2>
+          <UserForm
+            handleSubmit={handleSubmit}
+            onSubmit={onSubmit}
+            register={register}
+          />
+        </section>
+
         {/* rendered users */}
         {initialData.data?.length ? (
           <section className="flex h-full flex-col justify-center">
